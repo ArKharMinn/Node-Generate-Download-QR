@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generated</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white rounded-xl shadow-2xl overflow-hidden w-full max-w-md transition-all duration-300 hover:shadow-3xl">
+    <div class="p-8">
+      <!-- Header with back button -->
+      <div class="flex justify-between items-center mb-6">
+        <a href="/" class="text-blue-600 hover:text-blue-800 transition-colors">
+          <i class="fas fa-arrow-left mr-2"></i>Back
+        </a>
+        <div class="bg-blue-100 p-2 rounded-full">
+          <i class="fas fa-qrcode text-blue-600 text-xl"></i>
+        </div>
+      </div>
+      
+      <!-- Main content -->
+      <div class="text-center">
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">Your QR Code is Ready!</h1>
+        <p class="text-gray-600 mb-6">Generated for: <span class="text-blue-600 font-medium break-all"><%= text %></span></p>
+        
+        <!-- QR Code Display -->
+        <div class="bg-white p-4 rounded-lg border border-gray-200 mb-6 inline-block">
+          <img src="<%= qrImage %>" alt="QR Code for <%= text %>" class="w-64 h-64 mx-auto" />
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="<%= qrImage %>" download="qrcode.png" 
+             class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center">
+            <i class="fas fa-download mr-2"></i> Download
+          </a>
+          <a href="/" 
+             class="px-6 py-3 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center">
+            <i class="fas fa-redo mr-2"></i> Generate Another
+          </a>
+        </div>
+        
+        <!-- Usage Tips -->
+        <div class="mt-8 pt-6 border-t border-gray-200">
+          <h3 class="text-sm font-medium text-gray-500 mb-3">How to use your QR code:</h3>
+          <ul class="text-sm text-gray-600 space-y-2 text-left">
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+              <span>Print it on marketing materials or product packaging</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+              <span>Share digitally on websites or social media</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+              <span>Test with multiple devices to ensure it scans properly</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
